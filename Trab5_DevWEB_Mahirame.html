@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita de Sorvetão</title>
+    <style>
+        h1, h2, h3 {
+            color: red;
+            text-align: left;
+        }
+        p {
+            color: red;
+            text-align: left;
+        }
+        #para1 {
+            text-align: center;
+            color: blue;
+        }
+        img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        ul, ol {
+            max-width: 90%;
+            margin: auto;
+        }
+        .oculto {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            h1, h2, h3, p {
+                text-align: center;
+            }
+            ul, ol {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Receita de Sorvetão</h1>
+    <p id="descricao">Uma receita simples e fácil para se deliciar em dias de verão.</p>
+    
+    <a id="linkImagem" href="https://static.itdg.com.br/images/360-240/3f8925689fc648a5f19395eee730d1d7/104194-original.jpg">
+        <img id="imagem" src="https://static.itdg.com.br/images/360-240/3f8925689fc648a5f19395eee730d1d7/104194-original.jpg" alt="Sorvetão">
+    </a>
+
+    <hr>
+
+    <h2>Ingredientes</h2>
+    <ul id="listaIngredientes">
+        <li>800g de doce de leite</li>
+        <li>400ml de creme de leite</li>
+        <li>2 caixas de bis</li>
+        <li>1,5l de sorvete de flocos</li>
+    </ul>
+
+    <hr>
+
+    <h2>Passo a passo</h2>
+    <ol id="passos">
+        <li>Pique o bis enquanto o sorvete amolece.</li>
+        <li>Bata o creme de leite, doce de leite e alguns pedaços de bis.</li>
+        <li>Despeje na travessa e coloque bis por cima.</li>
+        <li>Leve ao freezer por 25 minutos.</li>
+        <li>Adicione o sorvete e finalize com mais bis.</li>
+        <li>Leve ao congelador por 2 horas.</li>
+    </ol>
+
+    <h3 id="para1">Fonte: <a href="https://www.tudogostoso.com.br/receita/43310-pave-irresistivel-de-bis-e-sorvete.html" target="_blank">Strogonoff de Bis</a></h3>
+
+    <hr>
+
+    <button onclick="alterarTexto()">Alterar Texto do Título</button>
+    <button onclick="alterarImagem()">Alterar Imagem</button>
+    <button onclick="alterarEstilo()">Mudar Estilo do Parágrafo</button>
+    <button onclick="mostrarEsconder()">Ocultar/Exibir Ingredientes</button>
+
+    <script>
+        function alterarTexto() {
+            document.getElementById('titulo').innerHTML = "Receita de Sorvetão Delicioso!";
+        }
+
+        function alterarImagem() {
+            document.getElementById('imagem').src = "https://cdn.casaeculinaria.com/wp-content/uploads/2023/05/08133023/Torta-de-bis-768x432.webp";
+            document.getElementById('imagem').alt = "Nova imagem do sorvetão";
+            document.getElementById('linkImagem').href = "https://cdn.casaeculinaria.com/wp-content/uploads/2023/05/08133023/Torta-de-bis-768x432.webp";
+        }
+
+        function alterarEstilo() {
+            document.getElementById('descricao').style.color = "purple";
+            document.getElementById('descricao').style.fontSize = "20px";
+            document.getElementById('descricao').style.textAlign = "center";
+        }
+
+        function mostrarEsconder() {
+            var lista = document.getElementById('listaIngredientes');
+            if (lista.classList.contains('oculto')) {
+                lista.classList.remove('oculto');
+            } else {
+                lista.classList.add('oculto');
+            }
+        }
+    </script>
+</body>
+</html>
